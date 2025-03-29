@@ -1,0 +1,1094 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:
+      "Basis Grotesque Pro",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    background-color: #fbfbfb;
+  }
+  
+  /* Transaction page container */
+  .transaction-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fbfbfb;
+  }
+  
+  .transaction-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header styles */
+  .page-header {
+    display: flex;
+    width: 100%;
+    height: 66px;
+    border-width: 0.2px;
+    border-color: #b0b3b5;
+    background-color: #fff;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 32px;
+  }
+  
+  .transaction-title {
+    color: #333c41;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .test-mode-badge {
+    color: #ff3b30;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: #ffe6e5;
+  }
+  
+  .account-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5px;
+  }
+  
+  .account-name {
+    color: #333c41;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .account-number {
+    color: #313957;
+    font-size: 12px;
+  }
+  
+  .caret-down {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Content wrapper */
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 24px 32px;
+  }
+  
+  /* Transaction details */
+  .transaction-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+  }
+  
+  .back-button {
+    transform: rotate(-90deg);
+  }
+  
+  .transaction-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e6e7e7;
+    background-color: #fff;
+  }
+  
+  .transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .amount-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .label {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .amount {
+    color: #000b11;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+  }
+  
+  .status-badge {
+    color: #fff;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background-color: #ffbf00;
+  }
+  
+  .transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e6e7e7;
+  }
+  
+  .info-label {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .info-value-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .info-value {
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+  
+  .copy-icon {
+    cursor: pointer;
+  }
+  
+  .channel-badge {
+    color: #333c41;
+    font-size: 14px;
+    line-height: 22.4px;
+    padding: 4px 8px;
+    border-radius: 100px;
+    border: 1px solid #e6e7e7;
+    background-color: #f9f7f7;
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #e6e7e7;
+    border: none;
+    margin: 0;
+  }
+  
+  .additional-info {
+    display: flex;
+    gap: 29px;
+  }
+  
+  .section-title {
+    color: #000b11;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.54px;
+    margin-bottom: 16px;
+  }
+  
+  .products-section,
+  .customer-section {
+    flex: 1;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-name {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .product-price {
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+  
+  .vertical-divider {
+    width: 1px;
+    background-color: #e6e7e7;
+    border: none;
+    margin: 0;
+    align-self: stretch;
+  }
+  
+  .customer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .customer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .customer-text {
+    color: #333c41;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  /* Refunds section */
+  .refunds-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 446px;
+  }
+  
+  .refunds-title {
+    border-width: 1.5px;
+    border-color: #b0b3b5;
+    color: #0c74b1;
+    font-size: 16px;
+    line-height: 22.4px;
+    border-bottom-width: 1px;
+    padding: 8px;
+  }
+  
+  .refund-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: 0.5px solid #b0b3b5;
+  }
+  
+  .refund-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+    border-bottom: 0.5px solid #b0b3b5;
+  }
+  
+  .refund-label {
+    color: #333c41;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  
+  .new-refund {
+    color: #0c74b1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+    cursor: pointer;
+  }
+  
+  .refund-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .refund-amount {
+    color: #000b11;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  .refund-date,
+  .refund-status {
+    color: #545c60;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .refund-modal {
+    width: 504px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    height: 66px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(
+      354deg,
+      rgba(244, 248, 251, 0) 0.07%,
+      #bddaea 132.65%
+    );
+  }
+  
+  .modal-content {
+    padding: 28px;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+  
+  .modal-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    color: #333c41;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.54px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .refund-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .refund-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .refund-info-label {
+    color: #000b11;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  .refund-info-value {
+    color: #000b11;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  
+  .refund-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .refund-amount-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .refund-amount-label {
+    color: #333c41;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .refund-amount-input {
+    color: #000b11;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 8px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    background-color: #f9f7f7;
+  }
+  
+  .refund-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+  }
+  
+  .cancel-button {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 0.5px solid #b0b3b5;
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 4px;
+    background-color: #cfe5f2;
+    color: #f4f8fb;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Media queries *//* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:
+      "Basis Grotesque Pro",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    background-color: #fbfbfb;
+    color: #333c41;
+  }
+  
+  .page-container {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  .page-header {
+    display: flex;
+    width: 100%;
+    height: 66px;
+    border-width: 0.2px;
+    border-color: #b0b3b5;
+    background-color: #fff;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 32px;
+  }
+  
+  .transaction-title {
+    color: #333c41;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .test-mode-badge {
+    color: #ff3b30;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: #ffe6e5;
+  }
+  
+  .company-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .company-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .company-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5px;
+  }
+  
+  .company-name {
+    color: #333c41;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .company-id {
+    color: #313957;
+    font-size: 12px;
+  }
+  
+  .dropdown-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Main content styles */
+  .page-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 24px 32px;
+  }
+  
+  /* Transaction details section */
+  .transaction-details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+  }
+  
+  .back-button {
+    cursor: pointer;
+  }
+  
+  .back-icon {
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+  }
+  
+  .transaction-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e6e7e7;
+    background-color: #fff;
+  }
+  
+  .transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .amount-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .amount-label {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .amount-value {
+    color: #000b11;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.6px;
+  }
+  
+  .status-badge {
+    color: #fff;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background-color: #ffbf00;
+  }
+  
+  .transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e6e7e7;
+  }
+  
+  .info-label {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .info-value-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .info-value {
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+  
+  .copy-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .channel-badge {
+    color: #333c41;
+    font-size: 14px;
+    line-height: 22.4px;
+    padding: 4px 8px;
+    border-radius: 100px;
+    border: 1px solid #e6e7e7;
+    background-color: #f9f7f7;
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #e6e7e7;
+    border: none;
+    margin: 0;
+  }
+  
+  .additional-info {
+    display: flex;
+    gap: 29px;
+  }
+  
+  .products-section,
+  .customer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  
+  .section-title {
+    color: #000b11;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.54px;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-name {
+    color: #545c60;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .product-price {
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+  
+  .vertical-divider {
+    width: 1px;
+    background-color: #e6e7e7;
+  }
+  
+  .customer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .customer-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .customer-text {
+    color: #333c41;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  /* Refunds section */
+  .refunds-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 446px;
+  }
+  
+  .refunds-title {
+    border-width: 1.5px;
+    border-color: #b0b3b5;
+    color: #0c74b1;
+    font-size: 16px;
+    line-height: 22.4px;
+    border-bottom-width: 1px;
+    padding: 8px;
+  }
+  
+  .refund-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: 0.5px solid #b0b3b5;
+  }
+  
+  .refund-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+    border-bottom: 0.5px solid #b0b3b5;
+  }
+  
+  .refund-attempt {
+    color: #333c41;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  
+  .new-refund-button {
+    background: none;
+    border: none;
+    color: #0c74b1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+    cursor: pointer;
+  }
+  
+  .refund-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .refund-amount {
+    color: #000b11;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  .refund-date,
+  .refund-status {
+    color: #545c60;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  /* Modal styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .refund-modal {
+    width: 504px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    height: 66px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(
+      354deg,
+      rgba(244, 248, 251, 0) 0.07%,
+      #bddaea 132.65%
+    );
+  }
+  
+  .modal-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+  
+  .modal-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    color: #333c41;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.54px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .refund-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .refund-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .refund-info-label {
+    color: #000b11;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  
+  .refund-info-value {
+    color: #000b11;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  
+  .refund-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .refund-amount-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .refund-amount-label {
+    color: #333c41;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  
+  .refund-amount-input {
+    color: #000b11;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 8px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    background-color: #f9f7f7;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+  }
+  
+  .cancel-button {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 0.5px solid #b0b3b5;
+    color: #333c41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 4px;
+    background-color: #cfe5f2;
+    color: #f4f8fb;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 991px) {
+    .additional-info {
+      flex-direction: column;
+    }
+  
+    .vertical-divider {
+      display: none;
+    }
+  
+    .refunds-section {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .header-content {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .page-content {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .company-details {
+      display: none;
+    }
+  
+    .refund-modal {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .additional-info {
+      flex-direction: column;
+    }
+  
+    .vertical-divider {
+      display: none;
+    }
+  
+    .refunds-section {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .header-content {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .content-wrapper {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .account-info {
+      display: none;
+    }
+  
+    .refund-modal {
+      width: 95%;
+    }
+  
+    .caret-down {
+      display: none;
+    }
+  }
+  
