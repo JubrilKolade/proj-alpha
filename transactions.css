@@ -1,3 +1,217 @@
+/* Custom styles */
+body {
+  font-family: "Basis Grotesque Pro", -apple-system, Roboto, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+/* Container styles */
+.container-fluid {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Table container styles */
+.table-container {
+  margin-left: auto;
+  width: 100%;
+  max-width: 1090px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-body {
+  padding: 24px 32px;
+}
+
+/* Logo and icon sizes */
+.account-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.dropdown-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.alert-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.period-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Company info styles */
+.company-name {
+  color: #333c41;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.account-id {
+  color: #313957;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Alert styles */
+.alert-info {
+  background-color: #f4f8fb !important;
+  border: none;
+  color: #0c74b1;
+}
+
+/* Input group styles */
+.input-group {
+  width: 300px;
+}
+
+.input-group-text,
+.form-control {
+  border-color: #b0b3b5;
+}
+
+.input-group .form-control::placeholder {
+  color: #8a8f92;
+}
+
+/* Table styles */
+.table-responsive {
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  color: #333c41;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.table > :not(caption) > * > * {
+  padding: 16px 8px;
+  line-height: 1.4;
+}
+
+.table > thead > tr > th {
+  border-bottom: 1px solid #b0b3b5;
+  color: #000b11;
+  font-weight: 400;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.table > tbody > tr > td {
+  border-bottom: 0.5px solid #b0b3b5;
+  vertical-align: middle;
+}
+
+.table > tbody > tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Column widths */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 186px;
+  padding-left: 0;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 200px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 215px;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 171px;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  width: 171px;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6) {
+  width: 147px;
+  padding-right: 0;
+}
+
+/* Badge styles */
+.badge {
+  font-weight: 400;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.badge.bg-light {
+  background-color: #f9f7f7 !important;
+  border-color: #e6e7e7 !important;
+  color: #333c41;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #0c74b1;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0a5f91;
+}
+
+.btn-sm {
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+/* Pagination styles */
+.pagination {
+  gap: 0.5rem;
+  margin-top: 32px;
+}
+
+.page-link {
+  color: #8a8f92;
+  padding: 0.25rem 0.5rem;
+  min-width: 2rem;
+  text-align: center;
+  border: none;
+}
+
+.page-item.active .page-link {
+  background-color: #0c74b1;
+  border-color: #0c74b1;
+}
+
+.prev-page,
+.next-page {
+  width: 24px;
+  height: 24px;
+}
+
+/* Card styles */
 .transactions-refund {
     background-color: rgba(255, 255, 255, 1);
     display: flex;
@@ -248,41 +462,22 @@
     }
   }
   
+  /* Content section styles */
   .content-section {
     background-color: rgba(255, 255, 255, 1);
-    align-self: end;
-    z-index: 10;
     display: flex;
-    margin-top: -797px;
     padding: 20px 32px;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     overflow: hidden;
-    justify-content: center;
-  }
-  
-  @media (max-width: 991px) {
-    .content-section {
-      margin-top: -200px;
-      padding: 20px;
-    }
+    justify-content: flex-end;
   }
   
   .content-container {
-    align-self: stretch;
     display: flex;
-    min-width: 240px;
-    margin: auto 0;
-    width: 1104px;
+    width: 1090px;
     flex-direction: column;
-    align-items: end;
-    justify-content: end;
-  }
-  
-  @media (max-width: 991px) {
-    .content-container {
-      max-width: 100%;
-    }
+    align-items: stretch;
   }
   
   .transactions-wrapper {
@@ -290,22 +485,14 @@
     width: 100%;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center;
   }
   
   .transactions-header {
     display: flex;
     width: 100%;
-    max-width: 1104px;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center;
-  }
-  
-  @media (max-width: 991px) {
-    .transactions-header {
-      max-width: 100%;
-    }
+    margin-bottom: 16px;
   }
   
   .total-count {
@@ -334,6 +521,8 @@
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
   }
   
   @media (max-width: 991px) {
@@ -387,6 +576,7 @@
   }
   
   .search-box {
+    display: flex;
     align-items: center;
     border-radius: 4px;
     border: 0.2px solid var(--Foundation-Primary-Black-primary-black-100, #b0b3b5);
@@ -822,4 +1012,64 @@
     flex-shrink: 0;
     cursor: pointer;
   }
+  
+@media (max-width: 991px) {
+  .content-section {
+    padding: 16px;
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .table-responsive {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 800px; /* Minimum width to ensure all columns are visible */
+  }
+
+  /* Adjust filter controls for mobile */
+  .filter-controls {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .actions-bar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .download-button {
+    width: 100%;
+  }
+}
+
+/* Make sure horizontal scroll is smooth */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
   

@@ -1,173 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transfers Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="transfer.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Basis+Grotesque+Pro:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Basis+Grotesque+Pro:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   </head>
   <body>
     <div class="app-container">
-      <header class="top-bar">
-        <h1 class="page-title">Transfers</h1>
-        <div class="header-controls">
-          <div class="test-mode-badge">Test Mode</div>
-          <div class="profile-container">
-            <div class="profile-icon-wrapper">
-              <svg
-                width="32"
-                height="33"
-                viewBox="0 0 32 33"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="profile-icon"
-              >
-                <circle
-                  cx="16"
-                  cy="16.75"
-                  r="16"
-                  fill="#DFECFF"
-                  fill-opacity="0.5"
-                ></circle>
-                <path
-                  d="M9.25 15.0625C9.25 14.9133 9.30926 14.7702 9.41475 14.6648C9.52024 14.5593 9.66332 14.5 9.8125 14.5H22.1875C22.3367 14.5 22.4798 14.5593 22.5852 14.6648C22.6907 14.7702 22.75 14.9133 22.75 15.0625V23.6875C22.75 23.8367 22.6907 23.9798 22.5852 24.0852C22.4798 24.1907 22.3367 24.25 22.1875 24.25H9.8125C9.66332 24.25 9.52024 24.1907 9.41475 24.0852C9.30926 23.9798 9.25 23.8367 9.25 23.6875V15.0625Z"
-                  fill="url(#paint0_linear_10_104)"
-                ></path>
-                <path
-                  d="M11.5 18.0625C11.5 17.9133 11.5593 17.7702 11.6648 17.6648C11.7702 17.5593 11.9133 17.5 12.0625 17.5H15.4375C15.5867 17.5 15.7298 17.5593 15.8352 17.6648C15.9407 17.7702 16 17.9133 16 18.0625V24.25H11.5V18.0625Z"
-                  fill="url(#paint1_linear_10_104)"
-                  fill-opacity="0.8"
-                ></path>
-                <path
-                  d="M16.75 18.0625C16.75 17.9133 16.8093 17.7702 16.9148 17.6648C17.0202 17.5593 17.1633 17.5 17.3125 17.5H19.9375C20.0867 17.5 20.2298 17.5593 20.3352 17.6648C20.4407 17.7702 20.5 17.9133 20.5 18.0625V20.6875C20.5 20.8367 20.4407 20.9798 20.3352 21.0852C20.2298 21.1907 20.0867 21.25 19.9375 21.25H17.3125C17.1633 21.25 17.0202 21.1907 16.9148 21.0852C16.8093 20.9798 16.75 20.8367 16.75 20.6875V18.0625Z"
-                  fill="url(#paint2_linear_10_104)"
-                  fill-opacity="0.8"
-                ></path>
-                <path
-                  d="M17.5 12.25L16.75 9.25H20.4318C20.5359 9.25008 20.639 9.27186 20.7343 9.31395C20.8295 9.35605 20.915 9.41754 20.9852 9.4945L23.3043 12.0355C23.4302 12.1737 23.5001 12.354 23.5 12.541V13.75C23.5 14.5456 23.1839 15.3087 22.6213 15.8713C22.0587 16.4339 21.2956 16.75 20.5 16.75C19.7044 16.75 18.9413 16.4339 18.3787 15.8713C17.8161 15.3087 17.5 14.5456 17.5 13.75V12.25Z"
-                  fill="url(#paint3_linear_10_104)"
-                ></path>
-                <path
-                  d="M8.5 12.541C8.49994 12.354 8.56976 12.1737 8.69575 12.0355L11.0148 9.4945C11.0849 9.41763 11.1702 9.3562 11.2654 9.3141C11.3606 9.27201 11.4634 9.25018 11.5675 9.25H15.25L14.5 12.25V13.75C14.5 14.5456 14.1839 15.3087 13.6213 15.8713C13.0587 16.4339 12.2956 16.75 11.5 16.75C10.7044 16.75 9.94129 16.4339 9.37868 15.8713C8.81607 15.3087 8.5 14.5456 8.5 13.75V12.541Z"
-                  fill="url(#paint4_linear_10_104)"
-                ></path>
-                <path
-                  d="M13 12.382C13.0006 12.2949 13.0163 12.2087 13.0465 12.127L14.125 9.25H17.875L18.9535 12.1263C18.9838 12.2081 18.9995 12.2947 19 12.382V13.75C19 14.5456 18.6839 15.3087 18.1213 15.8713C17.5587 16.4339 16.7956 16.75 16 16.75C15.2044 16.75 14.4413 16.4339 13.8787 15.8713C13.3161 15.3087 13 14.5456 13 13.75V12.382Z"
-                  fill="#9FF5FF"
-                ></path>
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_10_104"
-                    x1="12.625"
-                    y1="15.3865"
-                    x2="14.263"
-                    y2="24.7443"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0.312" stop-color="#29C3FF"></stop>
-                    <stop offset="1" stop-color="#0094F0"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="paint1_linear_10_104"
-                    x1="11.6605"
-                    y1="18.766"
-                    x2="16.0248"
-                    y2="21.7885"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#0067BF"></stop>
-                    <stop offset="1" stop-color="#003580"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="paint2_linear_10_104"
-                    x1="17.875"
-                    y1="17.083"
-                    x2="19.2453"
-                    y2="22.015"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#FDFDFD"></stop>
-                    <stop offset="1" stop-color="#B3E0FF"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="paint3_linear_10_104"
-                    x1="19.8655"
-                    y1="9.25"
-                    x2="19.8655"
-                    y2="12.5312"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#6F7BFB"></stop>
-                    <stop offset="1" stop-color="#252BD7"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="paint4_linear_10_104"
-                    x1="11.6155"
-                    y1="9.25"
-                    x2="11.6155"
-                    y2="12.5312"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#6F86FB"></stop>
-                    <stop offset="1" stop-color="#4925D7"></stop>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div class="profile-info">
-              <div class="company-name">PI Ventures</div>
-              <div class="account-number">1281721</div>
-            </div>
-            <div class="dropdown-icon-wrapper">
-              <svg
-                width="18"
-                height="19"
-                viewBox="0 0 18 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="caret-icon"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M3.35249 7.8C3.45796 7.69466 3.60093 7.6355 3.74999 7.6355C3.89906 7.6355 4.04202 7.69466 4.14749 7.8L8.92049 12.573C8.93791 12.5905 8.9586 12.6043 8.98138 12.6138C9.00416 12.6232 9.02858 12.6281 9.05324 12.6281C9.07791 12.6281 9.10233 12.6232 9.12511 12.6138C9.14788 12.6043 9.16858 12.5905 9.18599 12.573L13.959 7.8C14.0656 7.70064 14.2067 7.64655 14.3524 7.64912C14.4981 7.65169 14.6371 7.71073 14.7402 7.81379C14.8433 7.91685 14.9023 8.05588 14.9049 8.20161C14.9074 8.34734 14.8534 8.48837 14.754 8.595L9.98099 13.368C9.85911 13.4899 9.71442 13.5866 9.55517 13.6526C9.39592 13.7185 9.22524 13.7525 9.05287 13.7525C8.8805 13.7525 8.70981 13.7185 8.55056 13.6526C8.39132 13.5866 8.24662 13.4899 8.12474 13.368L3.35249 8.595C3.24716 8.48953 3.18799 8.34657 3.18799 8.1975C3.18799 8.04844 3.24716 7.90547 3.35249 7.8Z"
-                  fill="#0C74B1"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section class="notification-banner">
-        <div class="notification-content">
-          <div class="info-icon-wrapper">
-            <svg class="info-icon" width="20" height="20"></svg>
-          </div>
-          <p class="notification-message">
-            Complete your KYC process to Go Live!
-          </p>
-        </div>
-      </section>
-
-      <main class="main-content">
-        <div class="controls-container">
-          <div class="filter-section">
-            <div class="period-filter">
-              <span>This Month</span>
-              <div class="caret-down-wrapper">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-white border-bottom">
+        <div class="container-fluid">
+          <h1 class="h5 mb-0">Transfers</h1>
+          <div class="d-flex align-items-center gap-3">
+            <div class="badge bg-danger bg-opacity-10 text-danger">Test Mode</div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="profile-icon-wrapper">
                 <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
+                  width="32"
+                  height="33"
+                  viewBox="0 0 32 33"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="caret-down"
+                  class="profile-icon"
                 >
+                  <circle
+                    cx="16"
+                    cy="16.75"
+                    r="16"
+                    fill="#DFECFF"
+                    fill-opacity="0.5"
+                  ></circle>
+                  <path
+                    d="M9.25 15.0625C9.25 14.9133 9.30926 14.7702 9.41475 14.6648C9.52024 14.5593 9.66332 14.5 9.8125 14.5H22.1875C22.3367 14.5 22.4798 14.5593 22.5852 14.6648C22.6907 14.7702 22.75 14.9133 22.75 15.0625V23.6875C22.75 23.8367 22.6907 23.9798 22.5852 24.0852C22.4798 24.1907 22.3367 24.25 22.1875 24.25H9.8125C9.66332 24.25 9.52024 24.1907 9.41475 24.0852C9.30926 23.9798 9.25 23.8367 9.25 23.6875V15.0625Z"
+                    fill="url(#paint0_linear_10_104)"
+                  ></path>
+                  <path
+                    d="M11.5 18.0625C11.5 17.9133 11.5593 17.7702 11.6648 17.6648C11.7702 17.5593 11.9133 17.5 12.0625 17.5H15.4375C15.5867 17.5 15.7298 17.5593 15.8352 17.6648C15.9407 17.7702 16 17.9133 16 18.0625V24.25H11.5V18.0625Z"
+                    fill="url(#paint1_linear_10_104)"
+                    fill-opacity="0.8"
+                  ></path>
+                  <path
+                    d="M16.75 18.0625C16.75 17.9133 16.8093 17.7702 16.9148 17.6648C17.0202 17.5593 17.1633 17.5 17.3125 17.5H19.9375C20.0867 17.5 20.2298 17.5593 20.3352 17.6648C20.4407 17.7702 20.5 17.9133 20.5 18.0625V20.6875C20.5 20.8367 20.4407 20.9798 20.3352 21.0852C20.2298 21.1907 20.0867 21.25 19.9375 21.25H17.3125C17.1633 21.25 17.0202 21.1907 16.9148 21.0852C16.8093 20.9798 16.75 20.8367 16.75 20.6875V18.0625Z"
+                    fill="url(#paint2_linear_10_104)"
+                    fill-opacity="0.8"
+                  ></path>
+                  <path
+                    d="M17.5 12.25L16.75 9.25H20.4318C20.5359 9.25008 20.639 9.27186 20.7343 9.31395C20.8295 9.35605 20.915 9.41754 20.9852 9.4945L23.3043 12.0355C23.4302 12.1737 23.5001 12.354 23.5 12.541V13.75C23.5 14.5456 23.1839 15.3087 22.6213 15.8713C22.0587 16.4339 21.2956 16.75 20.5 16.75C19.7044 16.75 18.9413 16.4339 18.3787 15.8713C17.8161 15.3087 17.5 14.5456 17.5 13.75V12.25Z"
+                    fill="url(#paint3_linear_10_104)"
+                  ></path>
+                  <path
+                    d="M8.5 12.541C8.49994 12.354 8.56976 12.1737 8.69575 12.0355L11.0148 9.4945C11.0849 9.41763 11.1702 9.3562 11.2654 9.3141C11.3606 9.27201 11.4634 9.25018 11.5675 9.25H15.25L14.5 12.25V13.75C14.5 14.5456 14.1839 15.3087 13.6213 15.8713C13.0587 16.4339 12.2956 16.75 11.5 16.75C10.7044 16.75 9.94129 16.4339 9.37868 15.8713C8.81607 15.3087 8.5 14.5456 8.5 13.75V12.541Z"
+                    fill="url(#paint4_linear_10_104)"
+                  ></path>
+                  <path
+                    d="M13 12.382C13.0006 12.2949 13.0163 12.2087 13.0465 12.127L14.125 9.25H17.875L18.9535 12.1263C18.9838 12.2081 18.9995 12.2947 19 12.382V13.75C19 14.5456 18.6839 15.3087 18.1213 15.8713C17.5587 16.4339 16.7956 16.75 16 16.75C15.2044 16.75 14.4413 16.4339 13.8787 15.8713C13.3161 15.3087 13 14.5456 13 13.75V12.382Z"
+                    fill="#9FF5FF"
+                  ></path>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_10_104"
+                      x1="12.625"
+                      y1="15.3865"
+                      x2="14.263"
+                      y2="24.7443"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.312" stop-color="#29C3FF"></stop>
+                      <stop offset="1" stop-color="#0094F0"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="paint1_linear_10_104"
+                      x1="11.6605"
+                      y1="18.766"
+                      x2="16.0248"
+                      y2="21.7885"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#0067BF"></stop>
+                      <stop offset="1" stop-color="#003580"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="paint2_linear_10_104"
+                      x1="17.875"
+                      y1="17.083"
+                      x2="19.2453"
+                      y2="22.015"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FDFDFD"></stop>
+                      <stop offset="1" stop-color="#B3E0FF"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="paint3_linear_10_104"
+                      x1="19.8655"
+                      y1="9.25"
+                      x2="19.8655"
+                      y2="12.5312"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#6F7BFB"></stop>
+                      <stop offset="1" stop-color="#252BD7"></stop>
+                    </linearGradient>
+                    <linearGradient
+                      id="paint4_linear_10_104"
+                      x1="11.6155"
+                      y1="9.25"
+                      x2="11.6155"
+                      y2="12.5312"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#6F86FB"></stop>
+                      <stop offset="1" stop-color="#4925D7"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="d-flex flex-column">
+                <span class="company-name">PI Ventures</span>
+                <span class="account-number">1281721</span>
+              </div>
+              <div class="dropdown-icon-wrapper">
+                <svg
+                  width="18"
+                  height="19"
+                  viewBox="0 0 18 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="caret-icon"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.35249 7.8C3.45796 7.69466 3.60093 7.6355 3.74999 7.6355C3.89906 7.6355 4.04202 7.69466 4.14749 7.8L8.92049 12.573C8.93791 12.5905 8.9586 12.6043 8.98138 12.6138C9.00416 12.6232 9.02858 12.6281 9.05324 12.6281C9.07791 12.6281 9.10233 12.6232 9.12511 12.6138C9.14788 12.6043 9.16858 12.5905 9.18599 12.573L13.959 7.8C14.0656 7.70064 14.2067 7.64655 14.3524 7.64912C14.4981 7.65169 14.6371 7.71073 14.7402 7.81379C14.8433 7.91685 14.9023 8.05588 14.9049 8.20161C14.9074 8.34734 14.8534 8.48837 14.754 8.595L9.98099 13.368C9.85911 13.4899 9.71442 13.5866 9.55517 13.6526C9.39592 13.7185 9.22524 13.7525 9.05287 13.7525C8.8805 13.7525 8.70981 13.7185 8.55056 13.6526C8.39132 13.5866 8.24662 13.4899 8.12474 13.368L3.35249 8.595C3.24716 8.48953 3.18799 8.34657 3.18799 8.1975C3.18799 8.04844 3.24716 7.90547 3.35249 7.8Z"
+                    fill="#0C74B1"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Alert Banner -->
+      <div class="alert alert-info d-flex align-items-center m-0 py-3" role="alert">
+        <div class="info-icon-wrapper me-2">
+          <svg class="info-icon" width="20" height="20"></svg>
+        </div>
+        <p class="mb-0">Complete your KYC process to Go Live!</p>
+      </div>
+
+      <!-- Main Content -->
+      <main class="container py-5">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-5">
+          <div class="d-flex gap-3 flex-wrap">
+            <div class="dropdown">
+              <button class="btn btn-light d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
+                This Month
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="caret-down">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -175,18 +168,11 @@
                     fill="#333C41"
                   ></path>
                 </svg>
-              </div>
+              </button>
             </div>
-            <div class="search-box">
-              <div class="search-icon-wrapper">
-                <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="search-icon"
-                >
+            <div class="input-group">
+              <span class="input-group-text border-end-0 bg-white">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon">
                   <path
                     d="M7.33333 13.1667C10.2789 13.1667 12.6667 10.7789 12.6667 7.83333C12.6667 4.88781 10.2789 2.5 7.33333 2.5C4.38781 2.5 2 4.88781 2 7.83333C2 10.7789 4.38781 13.1667 7.33333 13.1667Z"
                     stroke="#545C60"
@@ -200,45 +186,36 @@
                     stroke-linejoin="round"
                   ></path>
                 </svg>
-              </div>
-              <span class="search-placeholder"
-                >Search by beneficiary and reference</span
-              >
+              </span>
+              <input type="text" class="form-control border-start-0" placeholder="Search by beneficiary and reference">
             </div>
           </div>
-          <div class="action-buttons">
-            <button class="new-transfer-btn">
-              <div class="plus-icon-wrapper">
-                <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="plus-icon"
-                >
-                  <path
-                    d="M3.33334 8.5H12.6667"
-                    stroke="#F4F8FB"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M8 3.83333V13.1667"
-                    stroke="#F4F8FB"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </div>
-              <span>New Transfer</span>
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary d-flex align-items-center gap-2" 
+                    onclick="showTransferModal()">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus-icon">
+                <path
+                  d="M3.33334 8.5H12.6667"
+                  stroke="#F4F8FB"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M8 3.83333V13.1667"
+                  stroke="#F4F8FB"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Create New Beneficiary
             </button>
-            <button class="download-btn">Download</button>
+            <button class="btn btn-outline-secondary">Download</button>
           </div>
         </div>
 
-        <div class="empty-state">
-          <div class="empty-icon-wrapper">
+        <!-- Empty State -->
+        <div class="text-center py-5">
+          <div class="empty-icon-wrapper mb-4">
             <svg
               width="94"
               height="78"
@@ -284,117 +261,192 @@
               </defs>
             </svg>
           </div>
-          <div class="empty-state-content">
-            <h2 class="empty-state-title">New Transfer</h2>
-            <p class="empty-state-description">
-              Add a product, generate a product link, and manage orders and
-              inventory seamlessly.
-            </p>
-            <button class="new-transfer-btn">
-              <div class="plus-icon-wrapper">
-                <svg
-                  width="17"
-                  height="16"
-                  viewBox="0 0 17 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="plus-icon"
-                >
-                  <path
-                    d="M3.83333 8H13.1667"
-                    stroke="#F4F8FB"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M8.5 3.33334V12.6667"
-                    stroke="#F4F8FB"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </div>
-              <span>New Transfer</span>
-            </button>
-          </div>
+          <h2 class="h5 mb-3">New Transfer</h2>
+          <p class="text-muted mb-4">Add a product, generate a product link, and manage orders and inventory seamlessly.</p>
+          <button class="btn btn-primary d-flex align-items-center gap-2 mx-auto"
+                  onclick="showTransferModal()">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus-icon">
+              <path
+                d="M3.83333 8H13.1667"
+                stroke="#F4F8FB"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M8.5 3.33334V12.6667"
+                stroke="#F4F8FB"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            New Transfer
+          </button>
         </div>
       </main>
 
-      <div class="modal-overlay">
-        <div class="modal-container">
-          <div class="modal-header-bg"></div>
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title">New Transfer</h2>
-              <div class="close-icon-wrapper">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="close-icon"
-                >
-                  <path
-                    d="M18 6L6 18"
-                    stroke="#333C41"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M6 6L18 18"
-                    stroke="#333C41"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
+      <!-- Modal Container -->
+      <div id="modal-container">
+        <!-- Transfer Modal -->
+        <div id="transfer-modal" class="modal fade" style="display: none;" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title">New Transfer</h5>
+                <button type="button" class="btn-close" onclick="hideModals()"></button>
               </div>
-            </div>
-            <div class="balance-info">Available Balance: NGN50,000.00</div>
-            <div class="transfer-form">
-              <div class="form-group">
-                <label class="form-label">Beneficiary</label>
-                <div class="select-input">
-                  <span class="select-placeholder">Select beneficiary</span>
-                  <div class="caret-down-wrapper">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="caret-down"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2.98 6.26666C3.07375 6.17303 3.20083 6.12044 3.33333 6.12044C3.46583 6.12044 3.59291 6.17303 3.68666 6.26666L7.92933 10.5093C7.94481 10.5249 7.9632 10.5372 7.98345 10.5456C8.0037 10.554 8.02541 10.5583 8.04733 10.5583C8.06925 10.5583 8.09096 10.554 8.11121 10.5456C8.13146 10.5372 8.14985 10.5249 8.16533 10.5093L12.408 6.26666C12.5028 6.17834 12.6281 6.13026 12.7577 6.13255C12.8872 6.13483 13.0108 6.18731 13.1024 6.27892C13.194 6.37052 13.2465 6.49411 13.2488 6.62365C13.2511 6.75318 13.203 6.87855 13.1147 6.97333L8.872 11.216C8.76366 11.3243 8.63504 11.4103 8.49349 11.4689C8.35193 11.5276 8.20022 11.5577 8.047 11.5577C7.89378 11.5577 7.74206 11.5276 7.60051 11.4689C7.45895 11.4103 7.33033 11.3243 7.222 11.216L2.98 6.97333C2.88636 6.87958 2.83377 6.7525 2.83377 6.62C2.83377 6.4875 2.88636 6.36041 2.98 6.26666Z"
-                        fill="#0C74B1"
-                      ></path>
-                    </svg>
-                  </div>
+              <div class="modal-body">
+                <div class="alert alert-light text-center mb-4">
+                  Available Balance: NGN50,000.00
                 </div>
-                <a href="/newtransfer.html" class="create-new-link">Create new beneciary</a>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Amount to send</label>
-                <div class="amount-input">Minimum amount to send NGN 100</div>
-                <p class="fee-info">
-                  You will be charged NGN 1 for this transfer
-                </p>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Narration</label>
-                <div class="narration-input">Enter narration</div>
-              </div>
-              <div class="form-actions">
-                <button class="cancel-btn">Cancel</button>
-                <button class="start-transfer-btn">Start Transfer</button>
+                <form onsubmit="event.preventDefault(); showConfirmationModal();">
+                  <div class="mb-3">
+                    <label class="form-label">Beneficiary</label>
+                    <select class="form-select mb-2" name="beneficiary">
+                      <option selected>Select beneficiary</option>
+                    </select>
+                    <button type="button" class="btn btn-link text-primary text-decoration-none p-0" onclick="showNewBeneficiaryModal()">Create new beneficiary</button>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Amount to send</label>
+                    <input type="text" class="form-control" name="amount" placeholder="Minimum amount to send NGN 100">
+                    <small class="text-muted">You will be charged NGN 1 for this transfer</small>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label">Narration</label>
+                    <input type="text" class="form-control" name="narration" placeholder="Enter narration">
+                  </div>
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-secondary" onclick="hideModals()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Start Transfer</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- New Beneficiary Modal -->
+        <div id="new-beneficiary-modal" class="modal fade" style="display: none;" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title">New Transfer</h5>
+                <button type="button" class="btn-close" onclick="hideModals()"></button>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-light text-center mb-4">
+                  Available Balance: NGN50,000.00
+                </div>
+                <form onsubmit="event.preventDefault(); showConfirmationModal();">
+                  <div class="mb-3">
+                    <label class="form-label">Bank Name</label>
+                    <select class="form-select" name="bank_name">
+                      <option selected>Select bank</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Account Number</label>
+                    <input type="text" class="form-control" name="account_number" placeholder="Enter account number">
+                    <div class="text-dark mt-1">ADEDAPO TIAMIU</div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Amount to send</label>
+                    <input type="text" class="form-control" name="amount" placeholder="Minimum amount to send NGN 100">
+                    <small class="text-muted">You will be charged NGN 1 for this transfer</small>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label">Narration</label>
+                    <input type="text" class="form-control" name="narration" placeholder="Enter narration">
+                  </div>
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-secondary" onclick="hideModals()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Start Transfer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmation-modal" class="modal fade" style="display: none;" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title">Confirm Transfer</h5>
+                <button type="button" class="btn-close" onclick="hideModals()"></button>
+              </div>
+              <div class="modal-body text-center">
+                <div class="mb-3">
+                  <div class="text-muted mb-1">NGN50,000.00 to</div>
+                  <div class="fw-medium">DAMILOLA OGUNDIPE</div>
+                  <div class="text-muted">8138482251 - GTBANK</div>
+                </div>
+                <p class="mb-4">We sent a confirmation code to<br>damilolaogundipe@gmail.com. Please enter the code<br>below to complete this transfer</p>
+                <div class="mb-4">
+                  <input type="text" class="form-control text-center" placeholder="Enter Code" style="max-width: 200px; margin: 0 auto;">
+                  <button type="button" class="btn btn-link text-primary text-decoration-none mt-2">Resend Code</button>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <button type="button" class="btn btn-outline-secondary" onclick="hideModals()">Back</button>
+                  <button type="button" class="btn btn-primary">Confirm Transfer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="modal-backdrop" class="modal-backdrop fade" style="display: none;"></div>
       </div>
     </div>
+
+    <script>
+      function showTransferModal() {
+        document.getElementById('transfer-modal').style.display = 'block';
+        document.getElementById('modal-backdrop').style.display = 'block';
+        document.getElementById('transfer-modal').classList.add('show');
+        document.getElementById('modal-backdrop').classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function showNewBeneficiaryModal() {
+        // Hide transfer modal first
+        document.getElementById('transfer-modal').style.display = 'none';
+        document.getElementById('transfer-modal').classList.remove('show');
+        
+        // Show new beneficiary modal
+        document.getElementById('new-beneficiary-modal').style.display = 'block';
+        document.getElementById('new-beneficiary-modal').classList.add('show');
+        document.getElementById('modal-backdrop').style.display = 'block';
+        document.getElementById('modal-backdrop').classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function showConfirmationModal() {
+        // Hide previous modals
+        document.getElementById('transfer-modal').style.display = 'none';
+        document.getElementById('new-beneficiary-modal').style.display = 'none';
+        document.getElementById('transfer-modal').classList.remove('show');
+        document.getElementById('new-beneficiary-modal').classList.remove('show');
+        
+        // Show confirmation modal
+        document.getElementById('confirmation-modal').style.display = 'block';
+        document.getElementById('confirmation-modal').classList.add('show');
+        document.getElementById('modal-backdrop').style.display = 'block';
+        document.getElementById('modal-backdrop').classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function hideModals() {
+        document.getElementById('transfer-modal').style.display = 'none';
+        document.getElementById('new-beneficiary-modal').style.display = 'none';
+        document.getElementById('confirmation-modal').style.display = 'none';
+        document.getElementById('modal-backdrop').style.display = 'none';
+        document.getElementById('transfer-modal').classList.remove('show');
+        document.getElementById('new-beneficiary-modal').classList.remove('show');
+        document.getElementById('confirmation-modal').classList.remove('show');
+        document.getElementById('modal-backdrop').classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    </script>
   </body>
 </html>

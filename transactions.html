@@ -4,28 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transactions/Refund</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="transactions.css" />
   </head>
   <body>
     <div class="transactions-refund">
-      <header class="top-section">
-        <nav class="topbar">
-          <div class="topbar-container">
-            <h1 class="navbar-text">Transactions</h1>
-            <div class="user-controls">
-              <div class="test-mode-container">
-                <div class="test-mode-wrapper">
-                  <span class="test-mode">Test Mode</span>
-                </div>
-              </div>
-              <div class="account-container">
-                <div class="account-info">
+      <header>
+        <nav class="navbar navbar-light bg-white border-bottom py-3">
+          <div class="container-fluid px-4">
+            <h1 class="navbar-brand mb-0 h5">Transactions</h1>
+            <div class="d-flex align-items-center gap-3">
+              <div class="badge bg-danger bg-opacity-10 text-danger px-3 py-2">Test Mode</div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/9a8d0427fd7d7c44916e495fd550bfcc63c6a68a?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
                     class="account-logo"
                     alt="Company logo"
                   />
-                  <div class="account-details">
+                  <div class="d-flex flex-column">
                     <span class="company-name">PI Ventures</span>
                     <span class="account-id">1281721</span>
                   </div>
@@ -39,258 +36,191 @@
             </div>
           </div>
         </nav>
-        <section class="notification-banner">
-          <div class="kyc-alert">
-            <div class="kyc-message">
+        <div class="alert alert-info rounded-0 mb-0 py-2">
+          <div class="container-fluid d-flex align-items-center justify-content-center gap-2">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a944a160080f20ecdfb6c091c630ce25e27fb92?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
                 class="alert-icon"
                 alt="Alert icon"
               />
-              <p class="kyc-text">Complete your KYC process to Go Live!</p>
-            </div>
+            <p class="mb-0">Complete your KYC process to Go Live!</p>
           </div>
-        </section>
-        <div class="spacer"></div>
+        </div>
       </header>
 
-      <main class="content-section">
+      <main class="container-fluid py-4">
+        <div class="content-section">
         <div class="content-container">
           <div class="transactions-wrapper">
             <div class="transactions-header">
-              <p class="total-count">
-                Total:
-                <span class="total-value">100</span>
-              </p>
+                <div class="total-count">
+                  Total: <span class="total-value">1,000</span> transactions
+                </div>
               <div class="actions-bar">
                 <div class="filter-controls">
                   <div class="period-selector">
-                    <span class="period-label">This Month</span>
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/09dbcfb438ca9bbed2e472f03abd538234b9ca8d?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
-                      class="period-icon"
-                      alt="Period dropdown"
-                    />
+                      <span class="period-label">Last 7 days</span>
+                      <img class="period-icon" src="assets/period-icon.svg" alt="Period">
                   </div>
                   <div class="search-box">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/97460e2701c12f77eb2c9c88becc4f53a37bd6f9?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
                       class="search-icon"
-                      alt="Search icon"
-                    />
-                    <span class="search-placeholder"
-                      >Search by reference and customer name</span
-                    >
-                  </div>
-                </div>
-                <button class="download-button">Download</button>
-              </div>
-            </div>
-
-            <section class="transactions-table">
-              <header class="table-header">
-                <div class="header-reference">Reference</div>
-                <div class="header-amount">Amount (NGN)</div>
-                <div class="header-customer">Customer</div>
-                <div class="header-channel">Payment Channel</div>
-                <div class="header-timestamp">Timestamp</div>
-                <div class="header-action">Action</div>
-              </header>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Bank Transfer</span>
+                        alt="Search"
+                      >
+                      <span class="search-placeholder">Search transactions</span>
                     </div>
                   </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
+                  <button class="download-button">Download</button>
                 </div>
               </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Bank Transfer</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Bank Transfer</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
+              <div class="table-container">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr class="align-middle">
+                        <th style="width: 186px">Reference</th>
+                        <th style="width: 200px">Amount (NGN)</th>
+                        <th style="width: 215px">Customer</th>
+                        <th style="width: 171px">Payment Channel</th>
+                        <th style="width: 171px">Timestamp</th>
+                        <th style="width: 147px" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Bank Transfer</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Bank Transfer</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Bank Transfer</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Crard</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Crard</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Crard</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Crard</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>T123456789234567</td>
+                        <td>20,000.00</td>
+                        <td>Adedapo Tiamiyu</td>
+                        <td>
+                          <span class="badge bg-light text-dark border">Crard</span>
+                        </td>
+                        <td>Mar 27, 2025, 6 : 50 PM</td>
+                        <td class="text-end">
+                          <button class="btn btn-primary btn-sm rounded-pill px-3">View Details</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
-              <div class="table-row">
-                <div class="row-content">
-                  <div class="cell-reference">T123456789234567</div>
-                  <div class="cell-amount">20,000.00</div>
-                  <div class="cell-customer">Adedapo Tiamiyu</div>
-                  <div class="cell-channel">
-                    <div class="channel-badge">
-                      <span class="channel-type">Crard</span>
-                    </div>
-                  </div>
-                  <div class="cell-timestamp">
-                    <span class="timestamp-value">Mar 27, 2025, 6 : 50 PM</span>
-                  </div>
-                </div>
-                <div class="view-details-button">
-                  <span class="view-details-text">View Details</span>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <nav class="pagination">
+              <nav class="d-flex justify-content-center mt-4">
+                <ul class="pagination mb-0">
+                  <li class="page-item">
+                    <a class="page-link border-0" href="#">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/389121001a80c0b8333fd447cb6a9ef66cad7a9f?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
               class="prev-page"
               alt="Previous page"
             />
-            <div class="page-numbers">
-              <span class="page-number active">1</span>
-              <span class="page-number">2</span>
-              <span class="page-number">3</span>
-              <span class="page-ellipsis">...</span>
-              <span class="page-number">10</span>
-            </div>
+                    </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><span class="page-link border-0">...</span></li>
+                  <li class="page-item"><a class="page-link" href="#">10</a></li>
+                  <li class="page-item">
+                    <a class="page-link border-0" href="#">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/149c9a67b7b18174be2ea0f958399ae6722fca6a?placeholderIfAbsent=true&apiKey=3902b8d99bf940e29a2497e4e28b1468"
               class="next-page"
               alt="Next page"
             />
+                    </a>
+                  </li>
+                </ul>
           </nav>
+            </div>
+          </div>
         </div>
       </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

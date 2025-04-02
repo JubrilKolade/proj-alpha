@@ -1,0 +1,49 @@
+<!-- New Beneficiary Modal -->
+<div class="modal fade show" style="display: block;" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">New Transfer</h5>
+        <button type="button" class="btn-close" 
+                hx-get="/close-modal"
+                hx-target="#modal-container"
+                hx-trigger="click"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-light text-center mb-4">
+          Available Balance: NGN50,000.00
+        </div>
+        <form hx-post="/submit-new-beneficiary" hx-target="#modal-container">
+          <div class="mb-3">
+            <label class="form-label">Bank Name</label>
+            <select class="form-select" name="bank_name">
+              <option selected>Select bank</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Account Number</label>
+            <input type="text" class="form-control" name="account_number" placeholder="Enter account number">
+            <div class="text-dark mt-1">ADEDAPO TIAMIU</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Amount to send</label>
+            <input type="text" class="form-control" name="amount" placeholder="Minimum amount to send NGN 100">
+            <small class="text-muted">You will be charged NGN 1 for this transfer</small>
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Narration</label>
+            <input type="text" class="form-control" name="narration" placeholder="Enter narration">
+          </div>
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-outline-secondary" 
+                    hx-get="/close-modal"
+                    hx-target="#modal-container"
+                    hx-trigger="click">Cancel</button>
+            <button type="submit" class="btn btn-primary">Start Transfer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show"></div> 
